@@ -1,0 +1,208 @@
+@media (max-width: 1200px) {
+    .navbar {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .feed-form {
+        .col-lg-5 {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .container {
+        padding: 0 20px;
+    }
+    .header {
+        padding: 10px 0 15px;
+        .logo {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+    }
+    .menu {
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100vh;
+        padding: 20px 15px;
+        background-color: rgba(0, 0, 0, .8);
+        transition: 0.6s all;
+        z-index: 10;
+        &_active {
+            left: 0;
+        }            
+        &_item {
+            padding-right: 0;
+            border: none;
+            margin: 10px;
+        }            
+        &_link {
+            font-size: 19px;
+            color: #efefef;
+        }
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 12px;
+        z-index: 100;
+        span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: blue;
+            margin-bottom: 2px;
+            transition: 0.5s all;
+        }
+        &_active {
+            span {
+                margin-bottom: -2px;
+                &:nth-child(1) {
+                    transform: translateY(3px) rotate(-45deg);
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    transform: translateY(3px) rotate(45deg);
+                }
+            }
+        } 
+    }
+    .about {
+        &_img {
+            margin-bottom: 20px;
+        }
+    }
+    .portfolio_wrapper {
+        width: 50%;
+    }
+    .modal {
+        &-contact {
+            width: 600px;
+            padding: 25px;
+        }
+        &-dialog {
+            max-width: 600px;
+        }
+        &_subtitle {
+            font-size: 27px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .container {
+        max-width: none;
+    }
+    .modal {
+        &-contact {
+            width: 450px;
+        }
+        &-dialog {
+            max-width: 450px;
+        }
+        &_subtitle {
+            font-size: 22px;
+        }
+        &_descr {
+            font-size: 15px;
+        }
+        &-footer {
+            .button {
+                margin-right: 0;
+                &:last-child {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+    .feed-form {
+        &_message {
+            button {
+                margin: 15px 0 0 0;
+                &:last-child {
+                    margin-left: 37px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .portfolio_wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        width: 100%;
+    }
+    .button_gray {
+        margin-top: 20px;
+    }
+    .feed-form {
+        &_message {
+            button {
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+            textarea {
+                height: 100px;
+            }
+        }
+    }
+    .modal {
+        &-contact {
+            width: 400px;
+            padding: 15px;
+        }
+        &-dialog {
+            max-width: 400px;
+        }
+        &_descr {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        &-footer {
+            .button {
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 425px) {
+    
+    .modal {
+        &-contact {
+            width: 300px;
+            
+        }
+
+        &-dialog {
+            max-width: 300px;
+        }
+        &_subtitle {
+            font-size: 21px;
+        }
+        &-footer {
+            .button {
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

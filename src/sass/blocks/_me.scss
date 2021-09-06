@@ -1,0 +1,62 @@
+
+.me {
+    margin-top: 80px;
+    border: none;
+    .row {
+        flex-direction: row-reverse;
+    }
+}
+
+.about {
+    &_img {
+      position: relative;
+      padding-bottom: 56.2%;
+        img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &_me-title {
+        margin-bottom: 2px;
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+    &_me-text {
+        margin-bottom: 20px;
+    }
+    &_me-info {
+        margin-bottom: 30px;
+        .span {
+            &_title {
+                float: left;
+                display: block;
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }        
+            &_text {
+                display: block;
+                padding-left: 90px;
+                font-size: 14px;
+                font-weight: 500;
+                opacity: 0.8;
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}
+.button {
+    margin-right: 30px;
+}
+
+  

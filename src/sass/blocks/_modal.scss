@@ -1,0 +1,72 @@
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, .56);
+}
+.modal {
+    &-contact {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: auto;
+        background-color: white;
+        padding: 38px 40px 40px 40px;
+    }
+    &-dialog {
+        max-width: 800px;
+    }
+    &-header {
+        padding: 0;
+        .opacity-box {
+            margin-top: 0;
+        }
+    }
+    &-content {
+        border-radius: 0;
+        border: none;
+    }
+    &-footer {
+        justify-content: flex-start;
+    }
+    &_subtitle {
+        color: #0D0D0D;
+        font-weight: 700;
+        font-size: 30px;
+        text-align: left;
+    }
+    &_descr {
+        color: #0D0D0D;
+        font-weight: 500;
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    &_mini {
+        min-height: 140px;
+    }
+    .error {
+        border: 1px solid red;
+    }
+    label.error {
+        border: none;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    img {
+        width: 100%;
+        &:last-child {
+            margin-top: 15px;
+        }
+    }
+}
+
+#contact_question,
+#thanks {
+    display: none;
+}
