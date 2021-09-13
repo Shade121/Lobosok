@@ -5,7 +5,9 @@ const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 const htmlmin = require('gulp-htmlmin');
+
 
 gulp.task('server', function() {
 
@@ -59,12 +61,17 @@ gulp.task('mailer', function(){
     return gulp.src("src/mailer/**/*")
     .pipe(gulp.dest("dist/mailer"));
 });
+ 
+gulp.task('imageminWebp', () =>
+    gulp.src("src/img/**/*")
+        .pipe(webp())
+        .pipe(gulp.dest("dist/img"))
+);
 
-gulp.task('images', function(){
-    return gulp.src("src/img/**/*")
-    .pipe(imagemin())
-    .pipe(gulp.dest("dist/img"));
+gulp.task('downloads', function(){
+    return gulp.src("src/downloads/**/*")
+    .pipe(gulp.dest("dist/downloads"));
 });
 
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'script', 'fonts', 'icons', 'mailer', 'images' ));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'script', 'fonts', 'icons', 'mailer', 'downloads', 'imageminWebp' ));
