@@ -2,23 +2,15 @@ $(document).ready(function () {
 
     'use strict';
 
-    window.addEventListener('DOMContentLoaded', () => {
-        const menu = document.querySelector('.menu'),
-            menuItem = document.querySelectorAll('.menu_item'),
-            hamburger = document.querySelector('.hamburger');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('hamburger_active');
-            menu.classList.toggle('menu_active');
-        });
-
-        menuItem.forEach(item => {
-            item.addEventListener('click', () => {
-                hamburger.classList.toggle('hamburger_active');
-                menu.classList.toggle('menu_active');
-            });
-        });
+    //mobile-menu
+    $('.hamburger').on('click', function () {
+        $('.mobile, .hamburger').toggleClass('active');
+    
     });
+    $('.mobile ul li a').on('click', function () {
+        $('.mobile, .hamburger').removeClass('active');
+    });
+    
     //fixed header
     function fixedHeader() {
         const ww = $(window).scrollTop();
@@ -34,7 +26,7 @@ $(document).ready(function () {
     });
 
     //   scroll to anchor
-    $('.navbar ul li a[href*="#"], .hamburger ul li a[href*="#"]').on('click',
+    $('.navbar ul li a[href*="#"], .mobile ul li a[href*="#"]').on('click',
         function (event) {
             event.preventDefault();
             const margin = $('.header').outerHeight();
@@ -62,7 +54,7 @@ $(document).ready(function () {
         $('.overlay, #contact_message, #thanks').fadeOut('slow');
     });
 
-
+    //Valide Forms
     function valideForms(form) {
         $(form).validate({
             rules: {
@@ -97,15 +89,12 @@ $(document).ready(function () {
         });
     }
 
-
     valideForms('#contact-form'),
     valideForms('#message-form'),
 
-
     $('input[name=phone]').mask("+38 (999) 999-99-99");
 
-
-
+    // PHP mailer
     $('form').submit(function (e) {
         e.preventDefault();
         $.ajax({
@@ -114,31 +103,22 @@ $(document).ready(function () {
             data: $(this).serialize()
         }).done(function () {
             $(this).find("input").val("");
-            $('#contact, #question').fadeOut();
+            $('#contact_message').fadeOut();
             $('.overlay, #thanks').fadeIn('slow');
             $('form').trigger('reset');
         });
         return false;
     });
 
+    // pageup
 
-    // Smooth scroll and pageup
-
-    // $(window).scroll(function(){
-    //     if ($(this).scrollTop() > 1600){
-    //         $('.pageup').fadeIn();
-    //     } else {
-    //         $('.pageup').fadeOut();
-    //     }
-    // });
-
-    // $("a[href=#up]").click(function(){
-    //   const _href = $(this).attr("href");
-    //   $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
-    //   return false;
-    // });
-
-    // new WOW().init();
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 700){
+            $('.up').fadeIn();
+        } else {
+            $('.up').fadeOut();
+        }
+    });
 
     function wowInit() {
         const scrollingAnimations = true; // Set false for turn off animation

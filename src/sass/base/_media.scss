@@ -21,31 +21,50 @@
             margin-top: 5px;
         }
     }
-    .menu {
+    .navbar {
+        display: none;
+    }
+    .mobile {
         position: fixed;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        top: 0;
-        left: -100%;
-        width: 50%;
+        top: -100%;
+        width: 100%;
         height: 100vh;
         padding: 20px 15px;
-        background-color: rgba(0, 0, 0, .8);
+        background-color: rgba(36, 5, 173, 0.8);
         transition: 0.6s all;
         z-index: 10;
-        &_active {
-            left: 0;
-        }            
-        &_item {
-            padding-right: 0;
-            border: none;
-            margin: 10px;
-        }            
-        &_link {
-            font-size: 19px;
-            color: #efefef;
-        }
+        &.active {
+            top: 15%;
+        }  
+    }
+    .menu {
+        &-mobile {
+            &_item {
+                padding-right: 0;
+                border: none;
+                margin: 20px;
+                list-style-type: none;
+                padding: 0 10px 0 10px;
+            }            
+            &_link {
+                font-size: 19px;
+                color: #efefef;
+                font-size: 15px;
+                font-weight: 700;
+                text-decoration: none;
+                text-transform: uppercase;
+                opacity: 0.8;
+                &:hover {
+                    transition: all 0.3s ease;
+                    text-decoration: underline;
+                    color: $accent-color;
+                }
+            }
+        } 
     }
     .hamburger {
         display: block;
@@ -60,12 +79,13 @@
             display: block;
             height: 2px;
             width: 100%;
-            background-color: blue;
+            background-color: $accent-color;
             margin-bottom: 2px;
             transition: 0.5s all;
         }
-        &_active {
+        &.active {
             span {
+                // background-color: #efefef;
                 margin-bottom: -2px;
                 &:nth-child(1) {
                     transform: translateY(3px) rotate(-45deg);
@@ -79,6 +99,7 @@
             }
         } 
     }
+    
     .about {
         &_img {
             margin-bottom: 20px;
