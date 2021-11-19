@@ -12,14 +12,14 @@ $mail->CharSet = 'utf-8';
 // $mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+$mail->Host = 'smtp.ukr.net';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'postmailler04@gmail.com';                 // Наш логин
-$mail->Password = 'fufnfrhbcnb121';                           // Наш пароль от ящика
+$mail->Username = 'postmailler@ukr.net';                 // Наш логин
+$mail->Password = 'RdW3nJm9DVP5jZRb';                           // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
  
-$mail->setFrom('postmailler04@gmail.com', 'resume');   // От кого письмо 
+$mail->setFrom('postmailler@ukr.net', 'resume');   // От кого письмо 
 $mail->addAddress('vladimir5093@ukr.net');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
