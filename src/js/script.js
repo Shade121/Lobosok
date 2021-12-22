@@ -104,7 +104,7 @@ $(document).ready(function () {
         }).done(function () {
             $(this).find("input").val("");
             $('#contact_message').fadeOut();
-            $('.overlay, #thanks').fadeIn('slow');
+            $('.overlay, #thanks').fadeIn();
             $('form').trigger('reset');
         });
         return false;
